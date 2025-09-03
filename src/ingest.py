@@ -13,7 +13,7 @@ for k in ("OPENAI_API_KEY", "PGVECTOR_URL", "PGVECTOR_COLLECTION"):
   if not os.getenv(k):
     raise RuntimeError(f"Environment variable {k} is not set")
 
-current_dir = Path(__file__).parent
+current_dir = Path(__file__).parent.parent
 pdf_path = current_dir / "document.pdf"
 
 docs = PyPDFLoader(str(pdf_path)).load()
